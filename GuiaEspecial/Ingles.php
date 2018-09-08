@@ -1,15 +1,13 @@
 <?php
-    class Ingles{
+    require_once("idioma.php");
+
+    class Ingles extends Idioma{
         public function Saludar(){
             return "Hello";
         }
 
         public function Despedirse(){
             return "Goodbye";
-        }
-
-        public function Otro($text){
-            return "$text";
         }
     }
 ?>

@@ -1,5 +1,7 @@
 <?php
-
+    include_once("Argentino.php");
+    include_once("Ingles.php");
+    include_once("Portugues.php");
 ?>
 
 <!DOCTYPE html>
@@ -42,14 +44,14 @@
             <section>
                 <div>SELECCIONE UN IDIOMA</div>
                 <div>
-                    <input type="radio" name="radioIdioma" value="arg" checked /> Argentino
-                    <input type="radio" name="radioIdioma" value="ing" /> Ingles
-                    <input type="radio" name="radioIdioma" value="por" /> Portugues
+                    <input type="radio" name="radioIdioma" value="<?php print base64_encode(serialize(new Argentino())) ?>" checked /> Argentino
+                    <input type="radio" name="radioIdioma" value="<?php print base64_encode(serialize(new Ingles())) ?>" /> Ingles
+                    <input type="radio" name="radioIdioma" value="<?php print base64_encode(serialize(new Portugues())) ?>" /> Portugues
                     <hr>
                     <div>SELECCIONE UNA ACCIÓN</div>
-                    <input type="radio" name="radioAccion" value="saludar" checked /> Saludar
-                    <input type="radio" name="radioAccion" value="despedirse" /> Despedirse
-                    <input type="radio" name="radioAccion" value="otro" /> Otro
+                    <input type="radio" name="radioAccion" value="Saludar" checked /> Saludar
+                    <input type="radio" name="radioAccion" value="Despedirse" /> Despedirse
+                    <input type="radio" name="radioAccion" value="Otro" /> Otro
                     <div><textarea name="textArea" rows="4" cols="50" placeholder="Mensaje|Message|Mensagem"></textarea></div>
                 </div>
             </section>
