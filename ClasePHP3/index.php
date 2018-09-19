@@ -13,6 +13,7 @@
     //require_once("Model\Person.php");
     //require_once("Model\Pet.php");  //not needed because of autoload.php
     require_once("autoload.php"); //loads dynamicaly the required files as it needs them
+    //require_once("../autoload.php"); //if autoload or what you want is one folder up in the tree
 
     use Model\Person as Person; //alias so you not need to use Model/Person everytime
     use Model\Pet as Pet;  //by setting this line not only you use the namespace, but you give instructions for autoload
