@@ -1,5 +1,5 @@
 <?php
-	namespace Vistas;
+	namespace View;
 ?>
 
 <!DOCTYPE html>
@@ -10,9 +10,9 @@
         <style>
             *{
                 text-align: center;
-                /*width: 100%*/
                 box-sizing: border-box;
             }
+
             .wrapper{
                 width: 800px;
                 margin: 0 auto;
@@ -57,7 +57,7 @@
                     <br><br>
                 </section>
             </form>
-			<form action="procesar.php" method="POST" id="form1">
+			<form action="GestionArtista/Decode" method="POST" id="form1">
                 <section id="top">		
                     <input type="submit" value="Gestion Teatros" /> 
                     <br><br>

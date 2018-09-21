@@ -12,7 +12,7 @@
 		
 		function index()
 		{
-			require(ROOT.'Vistas/home.php');
+			require(ROOT.'View/home.php');
 		}
 	}
 ?>

@@ -18,17 +18,14 @@ namespace Config;
             $controlador = "Controladora".$request->getControladora();
             $metodo = $request->getMetodo();
 
-
+            $parametros = array();
             $parametros = $request->getParametros();
           
           
             $objeto = "Controladoras\\". $controlador;
             $controlador = new $objeto();
                       
-
-			
-            if(!isset($parametros)) 
-                      
+            if(!isset($parametros))         
             {
                 call_user_func(array($controlador, $metodo));
             } else 
