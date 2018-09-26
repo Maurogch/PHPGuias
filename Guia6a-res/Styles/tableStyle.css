@@ -1,0 +1,65 @@
+body{
+    font-family: 'Segoe UI';
+}
+
+/* Bordered form */
+form {
+    border: 3px solid #f1f1f1;
+    max-width: 95%;
+    font-size: 20px;
+    align-items: center;
+}
+
+table{
+    border: 3px solid #f1f1f1;
+    /* max-width: 80%; */
+}
+
+th{
+    font-size: 18px;
+    background-color: #EDBB99;
+}
+td{
+    /* max-width: 90%; */
+    font-size: 18px;
+}
+.anotherTh{
+     font-size: 24px;
+}
+
+/* Full-width inputs */
+input[type=email], input[type=password], input[type=text], input[type=number], input[type=date]
+{
+    width: 300px;
+    padding: 5px 8px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+/* Set a style for all buttons */
+button, input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+.labelTitle{
+    border: 2px; 
+    border-radius: 3px;
+    background-color: green;
+    color: white;
+    font-size: 22px;
+    padding: 5px;
+}
