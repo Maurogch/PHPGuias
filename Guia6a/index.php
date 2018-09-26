@@ -17,13 +17,12 @@ if ($_POST) {
         session_start();
 
         $user = new User();
-        $billRepository = new BillRepository();
-
+        
         $user->setUserName($userName);
         $user->setPassword($password);
 
         $_SESSION["userLogged"] = $user;
-        $_SESSION["billRepository"] = $billRepository;
+        $_SESSION["billRepository"] = new BillRepository();
 
         header("location:main.php");
     } else {

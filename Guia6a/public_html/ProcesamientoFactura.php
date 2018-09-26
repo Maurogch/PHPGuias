@@ -14,7 +14,7 @@ $bill = new Bill();
 
 $bill = $_SESSION["bill"];
 
-$_SESSION["billRepository"]->Add($_SESSION["bill"]);
+$_SESSION["billRepository"]->Add($bill);
 
 //var_dump($_SESSION["billRepository"]->GetAll());
 

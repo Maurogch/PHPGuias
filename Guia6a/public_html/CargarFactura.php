@@ -29,7 +29,7 @@ if (!isset($_SESSION["userLogged"])) {
                         <td>Apellido: <input type="text" name="apellido" required></td>
                     </tr>
                     <tr>
-                        <td>DNI: <input type="text" name="DNI" required></td>
+                        <td>DNI: <input type="number" min="5000000" max="99999999" name="DNI" required></td>
                         <td>Email: <input type="email" name="email" required></td>
                     </tr>
                     <tr>

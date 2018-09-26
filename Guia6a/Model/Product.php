@@ -10,7 +10,12 @@ class Product
 
     public function getSubTotal() //this should throw an error if quantity is 0
     {
-        return $this->quantity * $this->price;
+        $subTotal = 0.0;
+
+        if ($this->quantity > 0) {
+            $subTotal = $this->quantity * $this->price;
+        }
+        return $subTotal;
     }
 
     public function getTotal()
@@ -18,10 +23,10 @@ class Product
         $total = $this->getSubTotal();
 
         if ($this->quantity >= 10) {
-            $total += $total * 15 / 100;
+            $total -= $total * 15 / 100;
             return $total;
         } else if ($this->quantity >= 5) {
-            $total += $total * 10 / 100;
+            $total -= $total * 10 / 100;
             return $total;
         } else {
             return $total;
