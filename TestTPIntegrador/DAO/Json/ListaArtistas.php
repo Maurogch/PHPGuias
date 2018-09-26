@@ -30,7 +30,7 @@
             var_dump($listaArtistas);
 
             foreach ($lista as $key => $value) {
-                $var = (Artista)$value[$key]; //falta castear
+                //$var = (Artista)$value[$key]; //falta castear
                 array_push($listaArtistas, $var);
             }
             var_dump($listaArtistas);
