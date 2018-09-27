@@ -11,7 +11,7 @@
 			//add code here
 		}
 		
-		function index(){
+		function index(){ //agregar validaciones aca (ej userLogged)
 			require(ROOT.'View/gestionArtista.php');
 		}
 		

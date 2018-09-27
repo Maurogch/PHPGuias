@@ -29,8 +29,8 @@ class Request
             if(empty($ArregloUrl)) {
                 $this->controladora = 'PaginaPrincipal';
             } else {
-                $this->controladora = array_shift($ArregloUrl);
-            }
+                $this->controladora = ucwords(array_shift($ArregloUrl)); //ucwords capitaliza la primer letra de un string
+            }                                                            //array_shift quita el primer elemento de un array y lo devuelve
 
 
             /*
@@ -40,7 +40,7 @@ class Request
             if(empty($ArregloUrl)) {
                 $this->metodo = 'index';
             } else {
-                $this->metodo = array_shift($ArregloUrl);
+                $this->metodo = ucwords(array_shift($ArregloUrl));
             }
             /**
              * Capturo el metodo de petición y lo guardo en una variable
@@ -59,7 +59,7 @@ class Request
                     $this->parametros = $ArregloUrl;
                 }
             } else {
-                $this->parametros = $_POST;
+                $this->parametros = $_POST; //si no hay parametros es un arreglo vacio
             }
            /* echo '<pre>';
             var_dump($this);
@@ -69,7 +69,7 @@ class Request
         /**
          * 
          */
-        public static function getInstance()
+        public static function getInstance() //singleton, hay que corregir
         {
             static $inst = null;
             if ($inst === null) {

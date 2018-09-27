@@ -11,19 +11,19 @@ namespace Config;
         {
             
         }
-        public static function direccionar(Request $request) 
+        public static function direccionar(Request $request) //notar que es static
         {
 
             
             $controlador = "Controladora".$request->getControladora();
+            //$controlador = $request->getControladora()."Controller"; //en ingles
             $metodo = $request->getMetodo();
 
             $parametros = array();
-            $parametros = $request->getParametros();
+            $parametros = $request->getParametros(); //ya deberia de meter un array aca, chequear
           
-          
-            $objeto = "Controladoras\\". $controlador;
-            $controlador = new $objeto();
+            $objeto = "Controladoras\\". $controlador; //mostrar
+            $controlador = new $objeto;
                       
             if(!isset($parametros))         
             {

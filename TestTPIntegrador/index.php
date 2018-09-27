@@ -27,9 +27,11 @@
 	use Config\Request 	as Request;
 	use Daos\SingletonDao as SingletonDao;
 	
+	$request = new Request();
 
 	Autoload::start();
 	session_start();
-	Router::direccionar(new Request());
+	//Router::direccionar(new Request());
+	Router::direccionar($request); //para que funcione el singleton interno?
 
 ?>
