@@ -57,7 +57,7 @@
                     <br><br>
                 </section>
             </form>
-			<form action="<?=BASE?>GestionArtista/Decode" method="POST" id="form1">
+			<form action="<?=BASE?>GestionArtista/listarArtistas" method="POST" id="form1">
                 <section id="top">		
                     <input type="submit" value="Gestion Teatros" /> 
                     <br><br>
