@@ -4,8 +4,8 @@ namespace Model;
 class Artista 
 //implements JsonSerializable
 {
-    public $nombre;
-    public $apellido;
+    private $nombre;
+    private $apellido;
 
     public function __construct()
     {
@@ -47,7 +47,7 @@ class Artista
     }*/
 
     //The Bad
-    public function toJson() //alternativa
+    public function toJson() //alternative to JsonSerializable interface
     {
         return json_encode(
             [
