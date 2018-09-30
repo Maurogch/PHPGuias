@@ -13,7 +13,8 @@ class Request
 	{
 		 /*  En el archivo htaccess se define una regla de reescritura para poder tomar la url tanto para todo metodo de petición.*/
             $url = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_URL);
-
+            //echo "url: ";
+            //var_dump($url);
             /*
               Convierto la url en un array tomando como separador la "/".
              */

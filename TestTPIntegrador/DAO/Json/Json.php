@@ -3,10 +3,9 @@
 
     class Json{
         
-    public function Serilize($list){
-        //$list[1] = $list[0];
-        $end = count($list);
+    public static function Serilize($list, $fileName){ 
         $string = "[";
+        $end = count($list);
         
         if($end == 1){
             $string = $list[0]->toJson();
@@ -20,17 +19,17 @@
             $string .= "]";
         }
 
-        $fp = fopen('test.json', 'w');
+        $fp = fopen($fileName, 'w');
         fwrite($fp, $string);
         fclose($fp);
     }
 
-    public function Deserilize(){
-        $fp = fopen('test.json', 'rb');
+    public static function Deserilize($fileName){
+        $fp = fopen($fileName, 'rb');
         $string = fread($fp, filesize('test.json'));
         fclose($fp);
 
-        return json_decode($string, true);
+        return $string;
     }
 
 

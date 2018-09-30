@@ -24,7 +24,14 @@ namespace Config;
           
             $objeto = "Controladoras\\". $controlador; //mostrar
             $controlador = new $objeto;
-                      
+            
+            /*echo "controlador:";
+            var_dump($controlador);
+            echo "metodo:";
+            var_dump($metodo);
+            echo "parametros:";
+            var_dump($parametros);*/
+            
             if(!isset($parametros))         
             {
                 call_user_func(array($controlador, $metodo));

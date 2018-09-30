@@ -11,10 +11,12 @@
 	 * Archivos necesarios de inicio
 	 */
 	require_once "Config/constantes.php";
+	//require_once "Vendor/Autoload.php";
 	require_once "Config/Autoload.php";
 	
-	require_once "Config/Request.php";
-	require_once "Config/Router.php";
+	
+	//require_once "Config/Request.php";
+	//require_once "Config/Router.php";
 	//require_once "Daos/SingletonDao.php";
 
 
@@ -27,11 +29,11 @@
 	use Config\Request 	as Request;
 	use Daos\SingletonDao as SingletonDao;
 	
-	$request = new Request();
-
+	
 	Autoload::start();
 	session_start();
 	//Router::direccionar(new Request());
-	Router::direccionar($request); //para que funcione el singleton interno?
+	$request = Request::getInstance();
+	Router::direccionar($request); //para que funcione el singleton interno
 
 ?>

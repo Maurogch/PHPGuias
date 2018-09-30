@@ -13,15 +13,15 @@
 <body>
     <div class="wrapper">
         <section>
-            <form action="GestionArtista/cargarArtista" method="post">
+            <form action="<?=BASE?>GestionArtista/cargarArtista" method="post">
                 <table>
                     <tr>
                         <td>Nombre: <input type="text" name="nombre" required></td>
                         <td>Apellido: <input type="text" name="apellido"></td>
                     </tr>
                     <tr>
-                        <td><input type="submit" value="Agregar"></td>
-                        <td></td>
+                        <td><button type="submit">Agregar</button></td>
+                        <td><input type="submit" value="Volver" formaction="<?=BASE?>PaginaPrincipal/index" formnovalidate></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -34,3 +34,11 @@
     </div>
 </body>
 </html>
+
+<?php
+    if(isset($_SESSION["listaArtistas"])){
+        var_dump($_SESSION["listaArtistas"]);
+    }else{
+        echo "session lista artistas no seteado";
+    }
+?>

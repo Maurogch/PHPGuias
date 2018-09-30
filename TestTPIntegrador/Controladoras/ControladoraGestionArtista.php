@@ -1,36 +1,40 @@
 <?php
-	namespace Controladoras;
+namespace Controladoras;
 
-	use Model\Artista as Artista;
-	use Dao\Json\ListaArtistas as ListaArtistas;
-	
-	class ControladoraGestionArtista
-	{
-		function __construct()
-		{
-			//add code here
-		}
-		
-		function index(){ //agregar validaciones aca (ej userLogged)
-			require(ROOT.'View/gestionArtista.php');
-		}
-		
-		function cargarArtista($nombre, $apellido){
-			$artista = new Artista();
-			$listaArtistas = new ListaArtistas();
+use Dao\Json\ListaArtistas as ListaArtistas;
+use Model\Artista as Artista;
 
-			$artista->setNombre($nombre);
-			$artista->setApellido($apellido);	
+class ControladoraGestionArtista
+{
+    protected $message;
+    private $listaArtistas;
 
-			$listaArtistas->Add($artista);
-		}
+    public function __construct()
+    {
+        $this->listaArtistas = ListaArtistas::getInstance();
+    }
 
-		function Decode(){
-			$listaArtistas = new ListaArtistas();
+    public function index()
+    { //agregar validaciones aca (ej userLogged)
 
-			$listaArtistas->RetrieveAll();
-		}
-		
-		
-	}
-?>
+        require ROOT . 'View/gestionArtista.php';
+    }
+
+    public function cargarArtista($nombre, $apellido)
+    {
+        try {
+            $artista = new Artista();
+            $artista->setNombre($nombre)->setApellido($apellido);
+            $this->listaArtistas->Add($artista);
+            $this->index();
+        } catch (Exception $e) {
+            $this->message = $e->getMessage();
+        }
+    }
+
+    public function listarArtistas()
+    {
+        var_dump($this->listaArtistas->RetrieveAll());
+    }
+
+}

@@ -1,50 +1,60 @@
 <?php
-    namespace Model;
+namespace Model;
 
-class Artista{
-    private $nombre;
-    private $apellido;
+class Artista 
+//implements JsonSerializable
+{
+    public $nombre;
+    public $apellido;
 
-    public function __construct(){
+    public function __construct()
+    {
         //to add
     }
 
-    public function getNombre(){
+    public function getNombre()
+    {
         return $this->nombre;
     }
 
-    public function setNombre($nombre){
+    public function setNombre($nombre)
+    {
         $this->nombre = $nombre;
+
+        return $this;
     }
 
-    public function getApellido(){
+    public function getApellido()
+    {
         return $this->apellido;
     }
 
-    public function setApellido($apellido){
+    public function setApellido($apellido)
+    {
         $this->apellido = $apellido;
+
+        return $this;
     }
-// implements JsonSerializable
-    /*public function jsonSerialize(){ //nunca encontro auto inlcude el JsonSerilizable
-        return 
-        [
-            'nombre'   => $this->getNombre(),
-            'apellido' => $this->getApellido()
-        ];
+  
+    /*public function jsonSerialize(){ //si se puediera implementar interfaz JsonSerializable
+    return
+    //[
+        array(
+    'nombre'   => $this->getNombre(),
+    'apellido' => $this->getApellido()
+        );
+    //];
     }*/
 
     //The Bad
-    public function toJson()
+    public function toJson() //alternativa
     {
-        return json_encode([
-            'artista' => [
+        return json_encode(
+            [
                 'nombre' => $this->getNombre(),
-                'apellido' => $this->getApellido()
+                'apellido' => $this->getApellido(),
             ]
-        ]);
+        );
     }
-    
 
 }
-
-?>
