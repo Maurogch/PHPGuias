@@ -36,9 +36,5 @@
 </html>
 
 <?php
-    if(isset($_SESSION["listaArtistas"])){
-        var_dump($_SESSION["listaArtistas"]);
-    }else{
-        echo "session lista artistas no seteado";
-    }
+
 ?>
