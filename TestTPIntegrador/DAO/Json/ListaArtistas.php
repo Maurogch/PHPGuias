@@ -11,8 +11,6 @@ use Dao\Json\JsonDecoder\JsonDecoder as JsonDecoder;
 
 class ListaArtistas extends SingletonDao implements IDao
 {
-    private $listaArtistas = array(); //maybe array is not needed this is not needed
-
     protected $file = "JsonFiles/artistas.json";
 
     /**
@@ -20,9 +18,10 @@ class ListaArtistas extends SingletonDao implements IDao
      */
     public function Add($object)
     {
-        $this->listaArtistas = $this->RetrieveAll();
-        array_push($this->listaArtistas, $object);
-        json::Serilize($this->listaArtistas, $this->file);
+        $listaArtista = array();
+        $listaArtistas = $this->RetrieveAll();
+        array_push($listaArtistas, $object);
+        json::Serilize($listaArtistas, $this->file);
     }
 
     public function Retrieve($var)
