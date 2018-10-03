@@ -13,9 +13,9 @@ class ProductRepository implements IProductRepository
 
         if ($product != null) {
             foreach ($this->productList as $productItem) {
-
                 if ($product->getProductCode() == $productItem->getProductCode()) {
                     $unique = false;
+                    break;
                 }
             }
         }
@@ -34,6 +34,7 @@ class ProductRepository implements IProductRepository
                 if ($productCode == $productItem->getProductCode()) {
                     array_splice($this->productList, $key, 1);
                     $deleted = true;
+                    break; //breaks foreach, as it has already deleted the product, and there no need to keep looping
                 }
             }
         }
