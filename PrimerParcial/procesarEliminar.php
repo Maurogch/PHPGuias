@@ -9,6 +9,8 @@ use Config\Autoload as Autoload;
 
 Autoload::Start();
 
+//There should be a userLogged check here
+
 if ($_POST) {
     session_start();
 
