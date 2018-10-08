@@ -1,6 +1,8 @@
 <?php 
 namespace Config;
 
+require_once "Vendor/Autoload.php";
+
 define('ROOT', str_replace('\\','/',dirname(__DIR__) . "/"));
 
 //define('ROOT', str_replace('localhost/tpbecharge/'));

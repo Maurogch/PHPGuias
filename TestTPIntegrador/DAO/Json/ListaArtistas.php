@@ -5,9 +5,7 @@ use DAO\IDao as IDao;
 use DAO\Json\Json as Json;
 use DAO\SingletonDao as SingletonDao;
 use Model\Artista as Artista;
-use Dao\Json\JsonDecoder\JsonDecoder as JsonDecoder;
-
-//require_once("vendor\karriere\json-decoder\src\JsonDecoder.php");
+use Karriere\JsonDecoder\JsonDecoder as JsonDecoder;
 
 class ListaArtistas extends SingletonDao implements IDao
 {
