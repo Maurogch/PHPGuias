@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Formularios4</title>
+<script>
+var edad;
+function comenzar(){
+	edad=document.getElementById("edad");
+	edad.addEventListener("change",cambia-rango,false);
+	document.datos_usuario.addEventListener("invalid",validar,true);
+	document.getElementsById("enviar").addEventListener("click",enviar,false);
+	document.datos_usuario.addEventListener("input",validar_online,false);
+	
+}
+function cambia_rango(){
+	var salida=document.getElementById("rango");
+	var calculo= edad.value-20;
+	if(calculo<20){
+		calculo=0;
+		edad.value=20;
+	}
+	salida.innerHTML= calculo+ " a "+edad.value;	
+}
+function validar(e){
+	var elemento=e.target;
+	elemento.style.background="#FFDDDD";	
+	
+}
+function enviar(){
+	var correcto=document.datos_usuario.checkValidity();
+	if(correcto==true){
+		document.datos_usuario.submit();
+	}
+	
+}
+function validar_online(e){
+	var elemento=e.target;
+	if(elemento.validity.valid==true){
+		elemento.style.background="#FFFFFF";	
+	}
+	else{
+		elemento.style.background="#FFDDDD";	
+	}
+}
+
+window.addEventListener("load",comenzar,false);
+</script>
+
+<style>
+	table{
+		background-color:#93C;
+		width:25%;
+		margin:auto;
+		text-aling:center;
+		padding:10px;
+		box-shadow:#CCC 10px 10px 10px;
+		border-radius: 20px 20px 20px 20px;
+	}
+	td{ 
+		padding:15px;
+	}
+</style>
+
+</head>
+
+
+<body>
+	<section>
+    	<form action="procesar.php" name="datos_usuario" method="post">
+        	<table>
+            <tr><td>									<!--tr = fila, td = columna-->
+            Usuario:</td><td><input pattern"[A-Za-z]{3}" name="usuario" id="usuario" maxlength="10" required></td></tr>
+            <tr><td>
+           	Email:</td><td><input type="email" name="miemail" id="miemail" required></td></tr>
+            <tr><td>
+            Edad:</td><td><input type="range" name="edad" id="edad" min="0" max="100" value="20" step="20"></td></tr>
+            <tr><td>
+            <output id="rango"> 0 a 20 </output>
+            </tr></td>
+            <tr><td>
+            <input type="submit" id="enviar" value="Registrar"></td></tr>
+            </table>            
+        </form>
+	</section>
+	
+</body>
+</html>

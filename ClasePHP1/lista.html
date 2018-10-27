@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Lista</title>
+		<meta charset="utf-8">
+	</head>
+    <body>
+        <ul style="list-style-type:circle"> <!--Lista vignieta [style:square; none; circle; disc]-->
+            <li>Café</li>
+			<li>Té</li>
+			<li>Gaseosa</li>
+        </ul>
+		<ol type="1"> <!--Lista oredenada (numeros) [type: 1(numeros); a(letras); i(numeros romanos) see w3school]-->
+			<li>Encender</li>
+			<li>Programar</li>
+			<li>Compilar</li>
+			<li>Correr</li>
+		</ol>
+		
+		<form method="get" action="Procesar.php"> <!--method: metodos de envio (get;post) | action: a que pagina voy a enviar datos para ser procesados-->			
+			<p>Nombre de usuario</p><input type="text" name="usuario" placeholder="Ingrese nombre" required /> 
+												 <!--type: que tipo de input, todos los controles deben tener un "name" (variable que recibe el servidor)-->
+												 <!--placeholder (html5 tag): texto que aparece por defecto dentro del textbox-->
+			</br>								 <!--required: chequea que campo este lleno al enviar formulario, sino no lo envia-->
+			<p>Contraseña</p><input type="password" name="pass" required /> <!--textbox que muestra astericos-->
+			</br></br>
+			<input type="file" name="avatar" /> <!--boton para cargar un archivo-->
+			</br></br>
+			<input type="radio" name="hijos" value="1" /> Si <!--radio button--><!--value: valor (texto) que envia a servidor cuando el radio está tildado-->
+			</br>
+			<input type="radio" name="hijos" value="0" /> No <!--al tener el mismo name no pueden estar seleccionados al mismo tiempo-->
+			</br>
+			<input type="radio" name="otroradio" value="10" /> Otro <!--no deselecciona los radios anteriores--><!--checked solo hace que se seleccione por defecto-->
+			</br></br>
+			<input type="checkbox" name="preferencias" value="musica" /> Música <!--checkbox control; se pueden tildar todos los que se quieran-->
+			</br>
+			<input type="checkbox" name="preferencias" value="deporte" /> Deporte
+			</br>
+			<input type="checkbox" name="preferencias" value="tecnología" /> Tecnología
+			</br></br>
+			<textarea name="mensaje" rows="5" cols="50" maxlength="10"> 
+				Mensaje
+			</textarea> <!--rows y cols cantidad de filas y columnas que se muestras, NO máximas--><!--maxlenght, maximos caracteres admitidos-->
+			</br></br>
+			<select name="pais"> <!--Combobox-->
+				<option>Seleccione un país</option>
+				<option value="arg">Argentina</option> <!--se puede usar "selected" para que selecione por defecto-->
+				<option value="fr">Francia</option>
+				<option value="ug">Uruguay</option>
+			</select>
+			</br></br>
+			<input type="submit" name="btnEnviar" value="Enviar" /> <!--Envia formulario al servidor-->
+			</br>
+			<input type="reset" name="btnReset" value="Limpiar" /> <!--Resetea todos los campos del formulario-->
+			<!--alternativa: <button type="submit" name="btnEnviar">Enviar</button> -->
+			
+		</form>
+    </body>
+    
+</html>

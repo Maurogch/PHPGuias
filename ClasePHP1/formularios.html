@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Prueba de formularios</title>
+</head>
+<body>
+	<section>
+		<form name="miformulario" action="procesar.php" id="miformulario" method="post" autocomplete="on">
+		<input type="text" name="Texto" id="Texto"  />
+        <!--<input type="submit" value="Enviar" /><br><br>-->
+    	Email:&nbsp;<input type="email" name="email" id="email" required multiple />
+        <!--<input type="submit" value="Enviar" /><br><br>-->
+        Buscar:&nbsp;<input type="search" name="buscar" id="buscar" />
+		<!--<input type="submit" value="Search" /><br><br>-->
+        Url:&nbsp;<input type="url" name="url" id="url" autofocus />
+	<!--	<input type="submit" value="Url" /><br><br>-->
+        Edad:&nbsp;<input type="number" name="Edad" id="edad" min="1" max="100" />
+      <!--  <input type="submit" value="Edad" /><br><br>-->
+       	Multiplos de 5:&nbsp;<input type="number" name="Multiplos" id="edad" min="0" max="100" step="5" placeholder="Multiplos de 5" />
+       <!--	<input type="submit" value="Multiplos" /><br><br>-->
+        Rango:&nbsp;<input type="range" name="Rango" id="rango" min="0" max="99" />
+      <!--  <input type="submit" value="Rango" /><br><br>-->
+       Fecha:&nbsp;<input type="date" name="Fecha" id="fecha" />
+       <!-- <input type="submit" value="Fecha" /><br><br>-->
+        Hora:&nbsp;<input type="time" name="Hora" id="hora" />
+      <!--  <input type="submit" value="Hora" /><br><br>-->
+       C.Postal:&nbsp;<input pattern ="[0-9]{5}" name="C.Postal" placeholder="5 digitos" /><br><br>
+      <!--  <input type="submit" value="C.Postal" /><br><br>-->
+      <input type="submit" value="Enviar" /><br><br>
+         </form>
+       </section>
+       <img src="imagenes/imagen.jpg"><br><br>
+       Campo externo al formulario:&nbsp;<input type="text" name="Nombre" id="nombre" form="miformulario"/>
+</body>
+</html>

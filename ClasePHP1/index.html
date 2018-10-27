@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>       
+        <meta charset="utf-8"> 
+        <title>Ejemplo del uso de formularios</title>
+    </head>
+	<body>
+	<!-- Formulario de Carga -->
+
+		<form action="procesar.php" method="post" id="form1">
+			<label for="nombre">Nombre: </label> <!--nombre para las textbox; "for" tiene que coincidir con name of input-->
+			<input type="text" name="nombre" required /></br></br>
+			<label for="pass">Contraseña: </label>
+			<input type="password" name="pass" />
+			<br><br>
+			<label for="esAlumno">Es alumno: </label>
+			<input type="radio" name="esAlumno" value="si" /> Si
+			<input type="radio" name="esAlumno" value="no" /> No
+			<br><br>
+			<label for="carrera">Carrera: </label>
+			<select name="carrera">
+				<option value="TSI">TSI</option>
+				<option value="TSP">TSP</option>
+				<option value="Agricultura">Agricultura</option>
+				<option value="Diseno">Diseño</option>
+			</select>
+			<br><br>
+			<input type="submit" value="Enviar" />
+		</form> 
+			<div>
+				<br><br>
+				<label for="text2">algo</label>
+				<input type="text" name="text2" form="form1" /> <!--por mas que este fuera de <form> si se usa tag from(name of form) lo envia igual-->
+			</div>
+	</body>
+</html>
