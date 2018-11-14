@@ -1,0 +1,16 @@
+<?php 
+require_once "Config/config.php";
+require_once "Config/autoload.php";
+
+use Config\autoload as Autoload;
+use Config\request as Request;
+use Config\router as Router;
+
+Autoload::Start();
+
+session_start();
+
+include(VIEWS_PATH.'header.php');
+Router::Route(new Request());
+include(VIEWS_PATH.'footer.php');
+
