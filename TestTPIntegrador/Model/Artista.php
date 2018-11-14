@@ -1,6 +1,8 @@
 <?php
 namespace Model;
 
+//use JsonSerializable as JsonSerializable;
+
 class Artista 
 //implements JsonSerializable
 {
