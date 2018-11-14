@@ -1,0 +1,1 @@
+<nav><div style="width:100%;height:60px;border:solid black"><div style="float:right;margin-right:50px"><h4>User: <?php if(isset($_SESSION["userLogged"]))echo $_SESSION["userLogged"]->getUser()?></h4></div></div></nav>
